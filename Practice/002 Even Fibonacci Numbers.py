@@ -2,3 +2,18 @@
 # the first $10$ terms will be:
 # $$1, 2, 3, 5, 8, 13, 21, 34, 55, 89, \dots$$</p>
 # <p>By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.</p>
+
+limit= 4*1000*1000
+a,b = 1,2
+sum=2
+
+def is_even(number):
+    return True if number%2 == 0 else False
+
+while a+b <= limit:
+    if is_even(a+b):
+        sum+=a+b
+
+    a,b=b,a+b
+
+print("even sum is: ", sum)
